@@ -8,41 +8,115 @@ body {
     width: 680px;
     height: auto;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 10vh;
     background-color: #ffffff;
     border-radius: 5px;
     border: solid 5px #ffffff;
+    display: grid;
+    grid-template-columns: 480px 50px 50px 50px 50px;
+    grid-template-rows: 498px 50px;
+}
+
+.slider {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#input-1 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#input-2 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#input-3 {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+#input-4 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+.wolves-overflow {
+    overflow: hidden;
 }
 
 .wolves-container {
     display: flex;
-    overflow: hidden;
     height: 468px;
 }
 
-.under-wolves {
-    margin: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
 .quote-overflow {
-    width: 310px;
+    width: 380px;
     overflow: hidden;
+    margin: 20px;
 }
 
 .quote-container {
     display: flex;
-    height: 20px;
-    width: 2160px;
+    width: 2720px;
+    margin: auto 0px;
 }
 
 .quote {
-    width: 540px;
-    margin: 0px;
+    width: 680px;
     white-space: nowrap;
 }
 
-.radio-buttons {
-    width: 95px;
+.radio-input {
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: solid 10px #ffffff;
+    background: rgba(159, 159, 159, 0.9);
+    appearance: none;
+    padding: 0;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.radio-input:hover, 
+.radio-input:focus-within {
+    background: rgba(69, 44, 44, 0.7);
+}
+
+.radio-input:checked {
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 3px solid rgba(159, 159, 159, 0.9);
+}
+
+#input-1:checked ~ .slider .wolves-container,
+#input-1:checked ~ .slider .quote-container{
+    transition: 1s;
+    transform: translateX(0px);
+}
+
+#input-2:checked ~ .slider .wolves-container,
+#input-2:checked ~ .slider .quote-container{
+    transition: 1s;
+    transform: translateX(-680px);
+}
+
+#input-3:checked ~ .slider .wolves-container,
+#input-3:checked ~ .slider .quote-container{
+    transition: 1s;
+    transform: translateX(-1360px);
+}
+
+#input-4:checked ~ .slider .wolves-container,
+#input-4:checked ~ .slider .quote-container{
+    transition: 1s;
+    transform: translateX(-2040px);
 }
